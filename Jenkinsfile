@@ -9,6 +9,7 @@ pipeline{
       }
       steps {
         echo 'Building & Pushing'
+        sleep time: 600, unit: SECONDS
       }
     }
   }
