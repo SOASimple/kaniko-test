@@ -16,13 +16,15 @@ spec:
     image: gcr.io/kaniko-project/executor:debug
     #v1.9.1
     command:
-    - ls -R /jenkins
+    - ls
     #- /kaniko/executor
     args:
-    # - --context=git://github.com/rbrumby/kaniko-test.git
-    - --context=dir:///jenkins/workspace/SOA-Simple_kaniko-test_main
-    - --dockerfile=Dockerfile
-    - --destination=roybrumby/kaniko-test:1.4
+    - -R
+    - /jenkins
+    ## - --context=git://github.com/rbrumby/kaniko-test.git
+    #- --context=dir:///jenkins/workspace/SOA-Simple_kaniko-test_main
+    #- --dockerfile=Dockerfile
+    #- --destination=roybrumby/kaniko-test:1.4
     tty: true
     volumeMounts:
     - name: workspace-volume
