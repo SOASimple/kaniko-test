@@ -13,12 +13,13 @@ metadata:
 spec:
   containers:
   - name: kaniko
-    image: gcr.io/kaniko-project/executor:v1.9.1
+    image: gcr.io/kaniko-project/executor:debug
+    #v1.9.1
     command:
     - /kaniko/executor
     args:
     # - --context=git://github.com/rbrumby/kaniko-test.git
-    - --context=dir:///jenkins/workspace/SOA-Simple_kaniko-test_mainXXX
+    - --context=dir:///jenkins/workspace/SOA-Simple_kaniko-test_main
     - --dockerfile=Dockerfile
     - --destination=roybrumby/kaniko-test:1.4
     tty: true
@@ -42,6 +43,7 @@ spec:
       }
       steps {
         echo 'Building & Pushing'
+        sh 'ls -R /jenkins'
         // sleep time: 600, unit: 'SECONDS'
       }
     }
