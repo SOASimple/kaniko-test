@@ -16,11 +16,10 @@ spec:
     image: gcr.io/kaniko-project/executor:debug
     #v1.9.1
     command:
-    - ls
+    - sleep
     #- /kaniko/executor
     args:
-    - -R
-    - /jenkins
+    - 300
     ## - --context=git://github.com/rbrumby/kaniko-test.git
     #- --context=dir:///jenkins/workspace/SOA-Simple_kaniko-test_main
     #- --dockerfile=Dockerfile
