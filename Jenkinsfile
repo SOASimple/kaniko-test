@@ -36,7 +36,7 @@ spec:
       steps {
         container('githubapp') {
           script {
-            env.GITHUB_TOKEN=\$(/git-tool.sh jwt \$GITHUB_APP_ID \$GITHUB_APP_KEY | /git-tool.sh token  \$GITHUB_TOKEN_URL)
+            env.GITHUB_TOKEN=$(/git-tool.sh jwt $GITHUB_APP_ID $GITHUB_APP_KEY | /git-tool.sh token  $GITHUB_TOKEN_URL)
           }
         }
       }
