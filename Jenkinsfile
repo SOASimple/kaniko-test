@@ -14,8 +14,6 @@ spec:
   containers:
   - name: githubapp
     image: roybrumby/git-tool:1.0
-    // command:
-    // - /git-tool.sh jwt $GITHUB_APP_ID $GITHUB_APP_KEY | /git-tool.sh token  $GITHUB_TOKEN_URL
     env:
     - name: GITHUB_APP_ID
       value: 309595
