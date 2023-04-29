@@ -38,6 +38,11 @@ spec:
       }
     }
     stage('Results') {
+      agent {
+        kubernetes {
+          cloud('kube_dev')
+        }
+      }
       steps {
         sh 'env'
       }
