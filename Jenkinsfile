@@ -48,7 +48,7 @@ spec:
       agent {
         kubernetes {
           cloud('kube_dev')
-          yaml """
+          yaml '''
 apiVersion: v1
 kind: Pod
 metadata:
@@ -60,7 +60,7 @@ spec:
     command:
     - /kaniko/executor
     args:
-    - --context=git://github.com/rbrumby/kaniko-test.git
+    - --context=git://x-access-token:${GITHUB_TOKEN}github.com/rbrumby/kaniko-test.git
     - --dockerfile=/Dockerfile
     - --destination=roybrumby/kaniko-test:1.4
     tty: true
@@ -71,7 +71,7 @@ spec:
   - name: roy-dockerhub-creds
     secret:
       secretName: roy-dockerhub-creds
-          """
+          '''
         }
       }
       steps {
