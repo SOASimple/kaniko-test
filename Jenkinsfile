@@ -62,7 +62,7 @@ spec:
     args:
     - --context=git://x-access-token:${GITHUB_TOKEN}@github.com/rbrumby/kaniko-test.git
     - --dockerfile=/Dockerfile
-    - --build-arg-"GITHUB_TOKEN=${GITHUB_TOKEN}"
+    - --build-arg="GITHUB_TOKEN=${GITHUB_TOKEN}"
     - --destination=roybrumby/kaniko-test:1.4
     tty: true
     volumeMounts:
