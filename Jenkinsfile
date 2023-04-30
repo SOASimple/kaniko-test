@@ -59,8 +59,6 @@ spec:
     image: gcr.io/kaniko-project/executor:v1.9.1
     command:
     - /kaniko/executor
-    #args:
-    #- $MY_SECRET
      - --context=git://github.com/rbrumby/kaniko-test.git
     - --context=dir:///jenkins/workspace/SOA-Simple_kaniko-test_main
     - --dockerfile=Dockerfile
