@@ -1,12 +1,11 @@
 FROM roybrumby/git-tool:1.0 as gitapp
 LABEL stage=gitapp
 
-ARG GITHUB_TOKEN
+ARG GH_TOKEN
 
-RUN  printf "Github token: %s\n" ${GITHUB_TOKEN}
 RUN  mkdir /packages && cd /packages \
- &&  git clone https://x-access-token:${GITHUB_TOKEN}@github.com/SOASimple/kaniko-test.git \
- &&  git clone https://x-access-token:${GITHUB_TOKEN}@github.com/SOASimple/git-tool.git
+ &&  git clone https://x-access-token:${GH_TOKEN}@github.com/SOASimple/kaniko-test.git \
+ &&  git clone https://x-access-token:${GH_TOKEN}@github.com/SOASimple/git-tool.git
 
 FROM alpine:3.17.3
 ARG TARGET_FOLDER=/demo/folder/packages
