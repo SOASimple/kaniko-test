@@ -56,14 +56,16 @@ metadata:
 spec:
   containers:
   - name: kaniko
-    image: gcr.io/kaniko-project/executor:debug
-    #v1.9.1
+    image: gcr.io/kaniko-project/executor:v1.9.1
+    env:
+      - name: GHTOKEN
+      - value: ${GITHUB_TOKEN}
     command:
     - /kaniko/executor
     args:
-    - --context=git://x-access-token:${GITHUB_TOKEN}@github.com/rbrumby/kaniko-test.git
+    - --context=git://x-access-token:\${GH_TOKEN}@github.com/rbrumby/kaniko-test.git
     - --dockerfile=/Dockerfile
-    - --build-arg="GITHUB_TOKEN=${GITHUB_TOKEN}"
+    - --build-arg="GITHUB_TOKEN=\${GH_TOKEN}"
     - --destination=roybrumby/kaniko-test:1.4
     tty: true
     volumeMounts:
