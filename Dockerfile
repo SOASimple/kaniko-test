@@ -1,6 +1,7 @@
 FROM roybrumby/git-tool:1.0 as gitapp
 LABEL stage=gitapp
 
+ARG GITHUB_TOKEN
 RUN  mkdir /packages && cd /packages \
  &&  git clone https://x-access-token:${GITHUB_TOKEN}@github.com/SOASimple/kaniko-test.git \
  &&  git clone https://x-access-token:${GITHUB_TOKEN}@github.com/SOASimple/git-tool.git
