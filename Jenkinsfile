@@ -60,7 +60,7 @@ spec:
     command:
     - /kaniko/executor
     args:
-    - --context=git://x-access-token:${GITHUB_TOKEN}github.com/rbrumby/kaniko-test.git
+    - --context=git://x-access-token:${GITHUB_TOKEN}@github.com/rbrumby/kaniko-test.git
     - --dockerfile=/Dockerfile
     - --destination=roybrumby/kaniko-test:1.4
     tty: true
