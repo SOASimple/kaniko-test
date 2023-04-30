@@ -8,8 +8,8 @@ COPY githubappkey.pem /githubappkey.pem
 
 RUN  mkdir /packages && cd /packages \
  &&  token=$(/git-tool.sh jwt ${GITHUB_APP_ID} ${GITHUB_PRIVATE_KEY} | /git-tool.sh token ${GITHUB_TOKEN_URL}) \
- &&  git clone https://x-access-token:${token}@github.com/SOASimple/kaniko-test.git \
- &&  git clone https://x-access-token:${token}@github.com/SOASimple/git-tool.git
+ &&  git clone https://x-access-token:${GITHUB_TOKEN}@github.com/SOASimple/kaniko-test.git \
+ &&  git clone https://x-access-token:${GITHUB_TOKEN}@github.com/SOASimple/git-tool.git
 
 FROM alpine:3.17.3
 ARG TARGET_FOLDER=/demo/folder/packages
