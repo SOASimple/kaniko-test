@@ -48,7 +48,7 @@ spec:
       agent {
         kubernetes {
           cloud('kube_dev')
-          yaml '''
+          yaml """
 apiVersion: v1
 kind: Pod
 metadata:
@@ -71,7 +71,7 @@ spec:
   - name: roy-dockerhub-creds
     secret:
       secretName: roy-dockerhub-creds
-          '''
+          """
         }
       }
       steps {
