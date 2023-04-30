@@ -1,7 +1,7 @@
 pipeline{
   agent none
   stages {
-    stage('Build & Push') {
+    stage('Set Github_APP_KEY') {
       agent {
         kubernetes {
           cloud('kube_dev')
