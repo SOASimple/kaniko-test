@@ -59,7 +59,7 @@ spec:
     image: gcr.io/kaniko-project/executor:v1.9.1
     env:
       - name: GHTOKEN
-      - value: ${GITHUB_TOKEN}
+        value: ${GITHUB_TOKEN}
     command:
     - /kaniko/executor
     args:
