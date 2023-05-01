@@ -57,16 +57,13 @@ spec:
   containers:
   - name: kaniko
     image: gcr.io/kaniko-project/executor:v1.9.1
-    env:
-      - name: GHTOKEN
-        value: ${GITHUB_TOKEN}
     command:
     - /kaniko/executor
     args:
     - --context=git://x-access-token:${GITHUB_TOKEN}@github.com/rbrumby/kaniko-test.git
     - --dockerfile=/Dockerfile
-    - --build-arg=GH_TOKEN=${GITHUB_TOKEN}
-    - --destination=roybrumby/kaniko-test:1.4
+    - --build-arg=GITHUB_TOKEN=${GITHUB_TOKEN}
+    - --destination=roybrumby/kaniko-test:1.4${BUILD_NUMBER}
     tty: true
     volumeMounts:
     - name: roy-dockerhub-creds
