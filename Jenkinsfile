@@ -1,7 +1,7 @@
 pipeline{
   agent none
   stages {
-    stage('Set Github_APP_KEY') {
+    stage('Get Github Token') {
       agent {
         kubernetes {
           cloud('kube_dev')
