@@ -63,9 +63,9 @@ spec:
     command:
     - /kaniko/executor
     args:
-    - --context=git://x-access-token:\$(GH_TOKEN)@github.com/rbrumby/kaniko-test.git
+    - --context=git://x-access-token:${GITHUB_TOKEN}@github.com/rbrumby/kaniko-test.git
     - --dockerfile=/Dockerfile
-    - --build-arg="GITHUB_TOKEN=\$(GH_TOKEN)"
+    - --build-arg="GH_TOKEN=${GITHUB_TOKEN}"
     - --destination=roybrumby/kaniko-test:1.4
     tty: true
     volumeMounts:
