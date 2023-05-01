@@ -63,7 +63,7 @@ spec:
     - --context=git://x-access-token:${GITHUB_TOKEN}@github.com/rbrumby/kaniko-test.git
     - --dockerfile=/Dockerfile
     - --build-arg=GITHUB_TOKEN=${GITHUB_TOKEN}
-    - --destination=roybrumby/kaniko-test:1.4${BUILD_NUMBER}
+    - --destination=roybrumby/kaniko-test:${BUILD_NUMBER}
     tty: true
     volumeMounts:
     - name: roy-dockerhub-creds
